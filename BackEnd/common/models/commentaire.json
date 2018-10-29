@@ -1,0 +1,28 @@
+{
+  "name": "commentaire",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Nom": {
+      "type": "string",
+      "required": true
+    },
+    "Date": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "article": {
+      "type": "hasOne",
+      "model": "article",
+      "foreignKey": "articleId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

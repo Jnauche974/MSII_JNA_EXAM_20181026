@@ -1,0 +1,36 @@
+{
+  "name": "article",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Nom": {
+      "type": "string",
+      "required": true
+    },
+    "Message": {
+      "type": "string",
+      "required": true
+    },
+    "CommentaireId": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "author": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    },
+    "articleId": {
+      "type": "hasMany",
+      "model": "commentaire",
+      "foreignKey": "articleId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
